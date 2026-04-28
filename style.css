@@ -1,0 +1,365 @@
+:root {
+  --bg: #f4ede4;
+  --surface: rgba(255, 250, 245, 0.78);
+  --surface-strong: #fff9f2;
+  --text: #231814;
+  --muted: #6b5a53;
+  --line: rgba(62, 37, 24, 0.12);
+  --accent: #8e5b4f;
+  --accent-deep: #5b3328;
+  --shadow: 0 28px 60px rgba(49, 29, 18, 0.14);
+  --radius-xl: 32px;
+  --radius-lg: 24px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  font-family: "Manrope", "Segoe UI", sans-serif;
+  color: var(--text);
+  background:
+    radial-gradient(circle at top left, rgba(219, 190, 170, 0.72), transparent 30%),
+    radial-gradient(circle at right center, rgba(142, 91, 79, 0.18), transparent 24%),
+    linear-gradient(135deg, #f8f2ea 0%, #ebdfd3 100%);
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.18) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.18) 1px, transparent 1px);
+  background-size: 44px 44px;
+  mask-image: radial-gradient(circle at center, black 45%, transparent 90%);
+  opacity: 0.3;
+}
+
+.page-shell {
+  width: min(1180px, calc(100% - 48px));
+  margin: 24px auto 48px;
+}
+
+.site-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 24px;
+  padding: 18px 24px;
+  position: sticky;
+  top: 16px;
+  z-index: 5;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: rgba(255, 248, 241, 0.84);
+  backdrop-filter: blur(18px);
+  box-shadow: 0 16px 32px rgba(52, 29, 17, 0.08);
+}
+
+.brand,
+.site-nav a,
+.button,
+.contact-details a {
+  text-decoration: none;
+}
+
+.brand {
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--accent-deep);
+  letter-spacing: 0.04em;
+}
+
+.site-nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 18px;
+}
+
+.site-nav a {
+  color: var(--muted);
+  font-size: 0.98rem;
+  font-weight: 700;
+}
+
+.site-nav a:hover,
+.site-nav a:focus-visible,
+.contact-details a:hover,
+.contact-details a:focus-visible {
+  color: var(--accent-deep);
+}
+
+.hero,
+.intro-grid,
+.cards,
+.journey-layout,
+.contact {
+  grid-template-columns: 1fr;
+}
+
+
+.eyebrow,
+.section-tag,
+.note-label {
+  text-transform: uppercase;
+  letter-spacing: 0.22em;
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: var(--accent);
+}
+
+.hero h1,
+.section-heading h2,
+.statement h2,
+.contact h2 {
+  margin: 0;
+  font-family: "Cormorant Garamond", Georgia, serif;
+  line-height: 0.95;
+  letter-spacing: -0.02em;
+}
+
+.hero h1 {
+  margin-top: 14px;
+  font-size: clamp(3.3rem, 7.4vw, 6rem);
+}
+
+.hero-text,
+.statement p,
+.card p,
+.journey-text p,
+.contact p,
+.profile-snapshot dd,
+.contact-details p {
+  color: var(--muted);
+  font-size: 1.03rem;
+  line-height: 1.75;
+}
+
+.hero-actions,
+.contact-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+  margin-top: 28px;
+}
+
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 170px;
+  padding: 14px 22px;
+  border-radius: 999px;
+  border: 1px solid transparent;
+  font-weight: 700;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.button:hover,
+.button:focus-visible {
+  transform: translateY(-2px);
+  box-shadow: 0 14px 24px rgba(65, 37, 25, 0.12);
+}
+
+.button.primary {
+  background: var(--accent-deep);
+  color: #fff7ef;
+}
+
+.button.secondary {
+  background: rgba(255, 249, 241, 0.72);
+  color: var(--accent-deep);
+  border-color: rgba(92, 52, 40, 0.12);
+}
+
+.quick-points {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin: 28px 0 0;
+  padding: 0;
+}
+
+.quick-points li {
+  padding: 10px 14px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: rgba(255, 252, 247, 0.72);
+  font-size: 0.94rem;
+  font-weight: 600;
+}
+
+.hero-visual {
+  position: relative;
+  display: grid;
+  justify-items: center;
+}
+
+.portrait-card,
+.journey-photo {
+  border-radius: var(--radius-xl);
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.62);
+  background: var(--surface-strong);
+  box-shadow: var(--shadow);
+}
+
+.portrait-card {
+  width: min(460px, 100%);
+  aspect-ratio: 4 / 5;
+  transform: rotate(-3deg);
+}
+
+.portrait-card img,
+.journey-photo img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.floating-note {
+  position: absolute;
+  right: -8px;
+  bottom: 28px;
+  width: min(250px, 72%);
+  padding: 18px 20px;
+  border-radius: 22px;
+  background: rgba(255, 249, 242, 0.94);
+  border: 1px solid rgba(92, 52, 40, 0.1);
+  box-shadow: 0 20px 35px rgba(55, 31, 20, 0.12);
+}
+
+.floating-note strong {
+  display: block;
+  margin-top: 8px;
+  line-height: 1.5;
+}
+
+.section {
+  padding: 38px 0;
+}
+
+.intro-grid,
+.journey-layout,
+.contact {
+  display: grid;
+  gap: 24px;
+}
+
+.intro-grid {
+  grid-template-columns: 1.2fr 0.8fr;
+}
+
+.panel,
+.card,
+.contact {
+  background: var(--surface);
+  border: 1px solid rgba(88, 56, 41, 0.1);
+  border-radius: var(--radius-xl);
+  backdrop-filter: blur(16px);
+  box-shadow: var(--shadow);
+}
+
+.panel,
+.card,
+.contact {
+  padding: 30px;
+}
+
+.section-heading {
+  max-width: 780px;
+  margin-bottom: 20px;
+}
+
+.section-heading h2,
+.statement h2,
+.contact h2 {
+  margin-top: 8px;
+  font-size: clamp(2.4rem, 4vw, 4rem);
+}
+
+.profile-snapshot dl {
+  margin: 0;
+}
+
+.profile-snapshot div + div {
+  margin-top: 18px;
+  padding-top: 18px;
+  border-top: 1px solid var(--line);
+}
+
+.profile-snapshot dt {
+  font-size: 0.8rem;
+  font-weight: 800;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--accent);
+}
+
+.profile-snapshot dd {
+  margin: 8px 0 0;
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 20px;
+}
+
+.card h3 {
+  margin: 0 0 12px;
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-size: 2rem;
+}
+
+.project-link {
+  display: block;
+  color: inherit;
+  text-decoration: none;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+}
+
+.project-link:hover,
+.project-link:focus-visible {
+  transform: translateY(-4px);
+  border-color: rgba(92, 52, 40, 0.25);
+  box-shadow: 0 22px 42px rgba(55, 31, 20, 0.16);
+}
+
+.journey-layout {
+  grid-template-columns: 1fr 0.82fr;
+  align-items: stretch;
+}
+
+.journey-photo {
+  min-height: 420px;
+}
+
+.contact {
+  grid-template-columns: 1fr auto;
+  align-items: center;
+}
+
+.contact-details {
+  margin-top: 18px;
+}
+
+.contact-details p {
+  margin: 10px 0;
+}
+
+.contact-details strong {
+  color: var(--text);
+}

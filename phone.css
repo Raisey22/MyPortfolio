@@ -1,0 +1,83 @@
+@media (max-width: 720px) {
+  .page-shell {
+    width: calc(100% - 20px);
+    margin-top: 10px;
+    margin: 10px auto 28px;
+  }
+
+  .site-header,
+
+  .site-header {
+    position: static;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 14px;
+    border-radius: 24px;
+  }
+
+  }
+
+  .site-nav {
+    width: 100%;
+    justify-content: flex-start;
+    gap: 12px 16px;
+  }
+
+  .site-nav a {
+    font-size: 0.94rem;
+  }
+
+  .hero,
+  .intro-grid,
+  .cards,
+  .journey-layout,
+  .contact {
+    grid-template-columns: 1fr;
+  }
+
+  .hero {
+    gap: 24px;
+    padding: 28px 0 20px;
+  }
+
+  .hero h1 {
+    font-size: clamp(2.8rem, 15vw, 4.2rem);
+    line-height: 0.98;
+    font-size: clamp(2.5rem, 14vw, 4rem);
+    line-height: 1;
+  }
+
+  .hero-text{
+    line-height: 1.65;
+  }
+
+  .hero-actions,
+  .contact-actions {
+    flex-direction: column;
+  }
+
+  .button {
+    width: 100%;
+    min-width: 0;
+  }
+
+  .portrait-card {
+    width: 100%;
+    max-width: 360px;
+    transform: none;
+  }
+
+  .floating-note {
+    position: static;
+    width: 100%;
+    margin-top: 16px;
+  }
+
+  .quick-points {
+    gap: 12px;
+  }
+
+  .quick-points li {
+    width: 100%;
+    text-align: center;
+  }

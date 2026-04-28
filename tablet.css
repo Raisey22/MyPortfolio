@@ -1,0 +1,46 @@
+@media (max-width: 1024px) {
+  .page-shell {
+    width: min(100% - 32px, 960px);
+  }
+
+  .site-header {
+    flex-direction: column;
+    align-items: flex-start;
+    border-radius: 28px;
+    padding: 18px 20px;
+  }
+
+  .hero,
+  .intro-grid,
+  .journey-layout,
+  .contact,
+  .cards {
+    grid-template-columns: 1fr;
+  }
+
+  .hero {
+    padding-top: 40px;
+  }
+
+  .hero-visual {
+    order: -1;
+  }
+
+  .portrait-card {
+    transform: none;
+    max-width: 420px;
+  }
+
+  .floating-note {
+    right: 14px;
+    bottom: 16px;
+  }
+
+  .journey-photo {
+    min-height: 360px;
+  }
+
+  .contact {
+    align-items: flex-start;
+  }
+}
