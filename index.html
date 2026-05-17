@@ -143,16 +143,16 @@
             </p>
           </a>
           <a class="card project-link" href="https://raisey22.github.io/toDoList/" target="_blank" rel="noopener noreferrer" aria-label="Open Web Development Practice Projects on GitHub">
-            <h3>Web Development Practice Projects</h3>
+            <h3>To-Do List</h3>
             <p>
               Small web projects developed using HTML, CSS, and JavaScript to strengthen
               my understanding of layouts, styling, and interactive page design.
             </p>
           </a>
-          <a class="card project-link" href="https://raisey22.github.io/Sparkly-CleanPro-App/" target="_blank" rel="noopener noreferrer" aria-label="Open Android Development Projects on GitHub">
-            <h3>Android Development Projects</h3>
+          <a class="card project-link" href="https://raisey22.github.io/LandingPage/" target="_blank" rel="noopener noreferrer" aria-label="Open Android Development Projects on GitHub">
+            <h3>Landing Page</h3>
             <p>
-              Java-based Android projects completed during my studies to build confidence
+              Built a clean and responsive landing page focused on user experience and accessibility
             </p>
           </article>
           </a>
@@ -215,5 +215,15 @@
       </section>
     </main>
   </div>
+  <script>
+    document.querySelectorAll('a[href*="linkedin.com"]').forEach((link) => {
+      const href = link.getAttribute('href');
+      if (href && !href.startsWith('http://') && !href.startsWith('https://')) {
+        link.href = `https://${href.replace(/^\/+/, '')}`;
+      }
+      link.target = '_blank';
+      link.rel = 'noopener noreferrer';
+    });
+  </script>
 </body>
 </html>
