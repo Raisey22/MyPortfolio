@@ -230,6 +230,9 @@ article p {
 
 .contact img {
     aspect-ratio: 1;
+    width: 250px;
+    height: 400px;
+    object-fit: cover;
 }
 
 .contact-details {
